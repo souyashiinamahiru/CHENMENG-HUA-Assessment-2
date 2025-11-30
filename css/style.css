@@ -1,0 +1,680 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    background-color: #f4f7f6;
+    font-family: 'Roboto Slab', Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+main {
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Buttons */
+.btn,
+.btn-submit,
+.btn-read-more,
+.btn-small {
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+    font-weight: bold;
+}
+
+.btn-submit,
+.btn {
+    background-color: #ff9800;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    width: 100%;
+    text-align: center;
+}
+
+.btn-small {
+    margin-top: 15px;
+    padding: 8px 20px;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 20px;
+}
+
+.btn-read-more {
+    padding: 8px 0;
+    color: #e67e22;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    margin-top: auto;
+}
+
+/* Button Hover Effects */
+.btn:hover,
+.btn-submit:hover,
+.btn-small:hover {
+    transform: scale(1.02);
+    opacity: 0.9;
+}
+
+.btn-read-more:hover {
+    color: #d35400;
+    padding-left: 5px;
+}
+
+/* Page Intro / Hero Section */
+.page-intro,
+.welcome-hero {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #e3f2fd;
+    border-radius: 8px;
+}
+
+.page-intro h1,
+.welcome-hero h1 {
+    color: #0056b3;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+/* Common Card Styles */
+.info-card,
+.service-card,
+.staff-card,
+.article-card,
+.form-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-header h3,
+.staff-card h3,
+.article-content h3,
+.form-card h3 {
+    color: #0056b3;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+    font-size: 1.4em;
+}
+
+/* Grid Systems (Mobile Default: Column) */
+.home-grid,
+.services-grid,
+.team-grid,
+.contact-grid,
+.articles-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+
+header {
+    background-color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1002;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    height: 80px;
+}
+
+header img {
+    height: 60px;
+    width: auto;
+    margin: 0 auto;
+}
+
+nav {
+    background-color: #0056b3;
+    text-align: center;
+    position: sticky;
+    top: 80px;
+    z-index: 1001;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    display: block;
+}
+
+nav li:last-child {
+    border-bottom: none;
+}
+
+nav li a {
+    color: #fff;
+    font-family: 'Francois One', sans-serif;
+    font-size: 1.1em;
+    display: block;
+    padding: 12px;
+}
+
+nav li a:hover,
+nav li a.active {
+    background-color: #004494;
+    color: #fbc531;
+}
+
+
+
+/* --- Home Page --- */
+.hero-image-container img {
+    border-radius: 8px;
+    margin: 15px auto;
+    max-height: 300px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.check-list,
+.hours-list {
+    padding: 0;
+    list-style: none;
+}
+
+.check-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+    padding-left: 25px;
+    text-align: left;
+}
+
+.check-list li::before {
+    content: "★";
+    color: #fbc531;
+    position: absolute;
+    left: 0;
+}
+
+.highlight-card .card-body {
+    background-color: #fff8e1;
+}
+
+.promo-box {
+    background: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border-left: 5px solid #ff9800;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.hours-list li {
+    padding: 8px 0;
+    font-size: 1.1em;
+    border-bottom: 1px dashed #ccc;
+}
+
+/* --- Services Page --- */
+.card-body {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-body ul {
+    padding: 0;
+}
+
+.card-body li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+    padding-left: 25px;
+}
+
+.card-body li::before {
+    content: "✔";
+    color: #fbc531;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.card-images {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: auto;
+}
+
+.card-images img {
+    border-radius: 6px;
+    height: 120px;
+    width: auto;
+    object-fit: cover;
+    border: 2px solid #f0f0f0;
+}
+
+/* --- About Us Page --- */
+.clinic-intro {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.staff-card {
+    text-align: center;
+}
+
+.staff-photo {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 15px auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #e3f2fd;
+}
+
+.staff-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.role {
+    display: block;
+    color: #fbc531;
+    font-weight: bold;
+    font-family: 'Francois One', sans-serif;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+}
+
+/* --- Contact Page --- */
+.info-list li {
+    padding: 10px 0;
+    border-bottom: 1px dashed #ddd;
+    font-size: 1.1em;
+}
+
+.info-list a {
+    color: #007BFF;
+    font-weight: bold;
+}
+
+.form-card {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-top: 5px solid #ff9800;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+.map-placeholder {
+    margin-top: 20px;
+    text-align: center;
+    color: #888;
+    background: #eee;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+/* --- Articles Page --- */
+.article-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.article-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.article-card:hover .article-image img {
+    transform: scale(1.1);
+}
+
+.article-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Single Article Page --- */
+.article-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.breadcrumb {
+    margin-bottom: 20px;
+}
+
+.breadcrumb a {
+    color: #007BFF;
+    font-weight: bold;
+}
+
+.article-header h1 {
+    font-size: 2.2em;
+    line-height: 1.3;
+}
+
+.article-header img {
+    border-radius: 8px;
+    margin-bottom: 30px;
+    max-height: 400px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.article-body h2 {
+    color: #e67e22;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-left: 5px solid #e67e22;
+    padding-left: 15px;
+}
+
+.article-body p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.article-body ul,
+.article-body ol {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.article-body li {
+    margin-bottom: 10px;
+}
+
+.article-cta {
+    margin-top: 50px;
+    padding: 30px;
+    background-color: #e3f2fd;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* =========================================
+   5. Footer
+   ========================================= */
+footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: #fbc531;
+}
+
+/* =========================================
+   6. Media Queries (Responsive)
+   ========================================= */
+
+/* --- Tablet View (min-width: 600px) --- */
+@media screen and (min-width: 600px) {
+
+    header {
+        height: 100px;
+    }
+
+    header img {
+        height: 80px;
+    }
+
+    nav {
+        top: 100px;
+    }
+
+    nav li {
+        display: inline-block;
+        border-bottom: none;
+        margin: 0 10px;
+    }
+
+    nav li a {
+        padding: 10px 15px;
+        border-radius: 4px;
+    }
+
+    .services-grid,
+    .team-grid,
+    .articles-grid,
+    .home-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .service-card,
+    .staff-card,
+    .article-card,
+    .info-card {
+        flex: 1 1 45%;
+    }
+
+    .contact-grid {
+        flex-direction: row;
+    }
+
+    .contact-info,
+    .contact-form-section {
+        flex: 1;
+    }
+
+    .clinic-intro {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .intro-text,
+    .intro-image {
+        flex: 1;
+    }
+}
+
+/* --- Desktop View (min-width: 769px) --- */
+@media screen and (min-width: 769px) {
+
+    header {
+        position: static;
+        height: auto;
+        padding: 20px 0;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    header img {
+        height: 120px;
+    }
+
+    nav {
+        position: static;
+        margin-top: 0;
+        border-radius: 5px;
+    }
+
+    nav li {
+        margin: 0 25px;
+    }
+
+    .services-grid,
+    .team-grid,
+    .home-grid {
+        flex-wrap: nowrap;
+    }
+
+    .service-card,
+    .staff-card,
+    .info-card {
+        flex: 1;
+    }
+
+    .card-images img {
+        height: 150px;
+    }
+
+    .article-card {
+        flex: 1 1 300px;
+        max-width: 48%;
+    }
+
+    .info-card:hover,
+    .service-card:hover,
+    .staff-card:hover,
+    .article-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* --- Services Page 圖片排版美化 --- */
+
+/* --- Services Page 圖片美化專區 (更新版) --- */
+
+/* 1. 單張大圖容器 */
+.card-image {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;
+    /* 上面圓角 */
+    margin-bottom: 10px;
+    background-color: #f0f0f0;
+    /* 加個底色，萬一圖片沒載入也不會太醜 */
+    /* 這裡設定一個「最小高度」，確保版面整齊 */
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 2. 圖片本體：自動適應 */
+.card-image img {
+    width: 100%;
+    height: 100%;
+    /* 這裡改成 cover，並強制設定高度，這樣才會整齊！ */
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card-images img {
+    width: 50%;
+    height: 100%;
+    /* 這裡改成 cover，並強制設定高度，這樣才會整齊！ */
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* 3. 四張圖拼貼容器 (Grid Layout) */
+.image-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* 左右兩欄 */
+    grid-template-rows: 1fr 1fr;
+    /* 上下兩列 */
+    gap: 2px;
+    width: 100%;
+    /* 這裡的高度要跟單張圖片(.card-image img) 一樣高！ */
+    height: 250px;
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 10px;
+}
+
+.image-gallery img {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* 4. 互動特效 */
+.service-card:hover .card-image img,
+.service-card:hover .image-gallery img {
+    transform: scale(1.1);
+    /* 滑鼠移上去放大 */
+}
